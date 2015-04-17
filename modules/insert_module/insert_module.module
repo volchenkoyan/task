@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Code for Insert Module.
+ */
+
+ 
+/**
+ *  Function inserting data from $form form into 'sign_in_users' table
+ */
+function insert_into_table($form, &$form_state)  {
+
+ $name = $form_state['values']['name'];
+ $surname = $form_state['values']['surname'];
+ $email = $form_state['values']['email'];
+ $phone = $form_state['values']['phone'];
+ 
+ $insert = db_insert('sign_in_users')
+   ->fields(array('name' => $name, 'surname' => $surname, 'email' => $email, 'phone' => $phone))
+   ->execute();
+   drupal_set_message(t('Succesful'));
+
+
+}
