@@ -1,0 +1,6 @@
+name = Sign in Module
+description = Custom module to create sign in form
+package = Core
+version = 7.x-1.x-dev
+core = 7.x
+files[] = sign_in.module
