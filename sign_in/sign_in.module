@@ -38,14 +38,14 @@ function sign_in_page_form($form, $form_state) {
   );
   $form['email'] = array(
     '#type' => 'textfield',
-	'#title' => t('Email'),
-	'#size' => 20,
+    '#title' => t('Email'),
+    '#size' => 20,
     '#maxlength' => 16,
   );
   $form['phone'] = array(
     '#type' => 'textfield',
-	'#title' => t('Number'),
-	'#size' => 20,
+    '#title' => t('Number'),
+    '#size' => 20,
     '#maxlength' => 16,
   );
   $form['sign'] = array(
