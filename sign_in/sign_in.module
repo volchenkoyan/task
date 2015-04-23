@@ -11,11 +11,11 @@
 function sign_in_module_menu() {
   $items = array();
   $items['sign-in-page'] = array(
-	'title' => 'SignIn',
-	'page callback' => 'drupal_get_form',
-	'page arguments' => array('sign_in_page_form'),
-	'access callback' => TRUE,
-	);
+    'title' => 'SignIn',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sign_in_page_form'),
+    'access callback' => TRUE,
+    );
   return $items;
 }
 
@@ -28,30 +28,30 @@ function sign_in_page_form($form, $form_state) {
     '#type' => 'textfield',
     '#title' => t('Name'),
     '#size' => 20,
-	'#maxlength' => 12,
+    '#maxlength' => 12,
   );
   $form['surname'] = array(
     '#type' => 'textfield',
     '#title' => t('Surname'),
     '#size' => 20,
-	'#maxlength' => 15,
+    '#maxlength' => 15,
   );
   $form['email'] = array(
     '#type' => 'textfield',
 	'#title' => t('Email'),
 	'#size' => 20,
-	'#maxlength' => 16,
+    '#maxlength' => 16,
   );
   $form['phone'] = array(
     '#type' => 'textfield',
 	'#title' => t('Number'),
 	'#size' => 20,
-	'#maxlength' => 16,
+    '#maxlength' => 16,
   );
   $form['sign'] = array(
     '#type' => 'submit',
     '#value' => t('SignIn'),
-	'#submit' => array('sign_in_page_submit'),
+    '#submit' => array('sign_in_page_submit'),
   );
   return $form;
 }
@@ -78,8 +78,8 @@ function sign_in_page_submit($form, &$form_state)  {
  
   //Query inserts data into 'sign_in_users' table
   $insert = db_insert('sign_in_users')
-	->fields(array('name' => $name, 'surname' => $surname, 'email' => $email, 'phone' => $phone))
-	->execute();
+    ->fields(array('name' => $name, 'surname' => $surname, 'email' => $email, 'phone' => $phone))
+    ->execute();
   drupal_set_message(t('Succesful'));
 }
 
