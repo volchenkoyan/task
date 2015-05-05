@@ -27,28 +27,28 @@ function sign_in_page_form($form, $form_state) {
   $form['name'] = array(
     '#type' => 'textfield',
     '#title' => t('Name'),
-	'#required' => TRUE,
+    '#required' => TRUE,
     '#size' => 20,
     '#maxlength' => 30,
   );
   $form['surname'] = array(
     '#type' => 'textfield',
     '#title' => t('Surname'),
-	'#required' => TRUE,
+    '#required' => TRUE,
     '#size' => 20,
     '#maxlength' => 30,
   );
   $form['email'] = array(
     '#type' => 'textfield',
     '#title' => t('Email'),
-	'#required' => TRUE,
+    '#required' => TRUE,
     '#size' => 20,
     '#maxlength' => 50,
   );
   $form['phone'] = array(
     '#type' => 'textfield',
     '#title' => t('Number'),
-	'#required' => TRUE,
+    '#required' => TRUE,
     '#size' => 20,
     '#maxlength' => 16,
   );
