@@ -1,6 +1,0 @@
-name = Insert Module
-description = Custom module to insert sign in data into database
-package = Core
-version = 7.x-1.x-dev
-core = 7.x
-files[] = insert.module
