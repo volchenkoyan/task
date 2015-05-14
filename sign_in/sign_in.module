@@ -10,8 +10,8 @@
 function users_db_permission() {
   return array(
     'db access' => array(
-	    'title' => t('Access Users Database'),
-		'description' => t('Allows an admin to access database'),
+        'title' => t('Access Users Database'),
+        'description' => t('Allows an admin to access database'),
 		)
 	);
 }
@@ -29,7 +29,7 @@ function sign_in_module_menu() {
     );
   $items['users-db'] = array(
     'title' => 'Users database',
-	'page callback' => 'show_users_db',
+    'page callback' => 'show_users_db',
     'access arguments' => array('db access'),
 	);
   return $items;
@@ -85,9 +85,9 @@ function show_users_db() {
   $query = db_select('sign_in_users','n');
   $query -> fields('n', array(
             'name',
-			'surname',
-			'email',
-			'phone'));
+            'surname',
+            'email',
+            'phone'));
   //Shows 10 results per page
   $query = $query->extend('PagerDefault')->limit(10);
   $get_users_result = $query->execute()->fetchAll();
@@ -103,14 +103,14 @@ function show_users_db() {
     $users = "Sorry, there are no users in 'sign_in_users' table";
   }
   return '<table>'.
-      '<tr>'.
-	    '<td><b>Name</b></td>'.
-		'<td><b>Surname</b></td>'.
-		'<td><b>Email</b></td>'.
-		'<td><b>Phone</b></td>'.
-      '</tr>'.
-	  $users. '</table>'.
-	  theme('pager');
+         '<tr>'.
+         '<td><b>Name</b></td>'.
+         '<td><b>Surname</b></td>'.
+         '<td><b>Email</b></td>'.
+         '<td><b>Phone</b></td>'.
+         '</tr>'.
+         $users. '</table>'.
+	     theme('pager');
 }
 
 /**
